@@ -1,0 +1,385 @@
+/* Enable smooth scrolling for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Apply border-box to all elements for consistent sizing */
+* {
+    box-sizing: border-box;
+}
+
+/* Reset default margin and set base font */
+body {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* ======= LAYOUT CONTAINER ======= */
+/* Main container with side-by-side layout for desktop */
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    overflow: hidden;
+    /* Prevents page scrolling */
+}
+
+/* ======= LEFT PANEL STYLES ======= */
+.header {
+    background-color: rgb(121, 121, 144);
+    /* Background color for left panel */
+    color: white;
+    width: 50%;
+    /* Takes half the screen */
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+/* ======= RIGHT PANEL (IMAGE) ======= */
+.image-container {
+    width: 50%;
+    overflow: hidden;
+    /* Prevents scrollbars if image is large */
+}
+
+/* ======= NAVIGATION LIST STYLES ======= */
+.List {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    /* Removes bullet points */
+    padding: 0;
+    margin: 20px 0;
+}
+
+.List li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ======= MOBILE RESPONSIVENESS (≤768px) ======= */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        /* Stack elements vertically */
+        height: auto;
+    }
+
+    .header,
+    .image-container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .image-container img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .List {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 30px;
+        align-content: space-evenly;
+    }
+}
+
+/* ======= TABLET VIEW (601px - 1024px) ======= */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .List li {
+        font-size: 30px;
+    }
+
+    .Name {
+        font-size: 40px;
+    }
+
+    .para {
+        font-size: 40px;
+    }
+}
+
+/* ======= MAIN HEADING ======= */
+#first {
+    font-size: 5rem;
+    text-align: center;
+    margin-top: 200px;
+    margin-bottom: 0;
+}
+
+/* ======= HEADING & TEXT STYLES FOR SMALL DEVICES ======= */
+@media (max-width: 600px) {
+    #first {
+        font-size: 2.5rem;
+        margin-top: 100px;
+    }
+
+    h6 {
+        font-size: 1.2rem;
+    }
+}
+
+/* ======= SUBHEADING ======= */
+h6 {
+    margin-top: 0;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+/* ======= BASIC IMAGE STYLES ======= */
+.pic {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Tablet-specific image styling */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .pic {
+        border-radius: 10px;
+        width: 100%;
+        object-fit: cover;
+        height: 100%;
+    }
+}
+
+/* ======= SECTION HEADERS ======= */
+.h2 {
+    text-align: center;
+    padding: 60px 20px;
+    max-width: 800px;
+    margin: auto;
+    color: #333;
+}
+
+/* ======= ABOUT ME SECTION ======= */
+#Aboutme {
+    max-width: 100%;
+    padding: 80px 20px;
+    word-spacing: 2px;
+    line-height: 1.5;
+    background-color: rgb(184, 197, 208);
+}
+
+/* Paragraph text inside sections */
+.para {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+    padding: 0 20px;
+}
+
+/* ======= REEL SECTION IMAGE ======= */
+#reel {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+/* Banner-style image */
+.bagimage {
+    width: 100%;
+    height: auto;
+    max-width: 1200px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* ======= PHOTO GRID SECTION ======= */
+#photossec {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    height: auto;
+}
+
+/* Grid container for photos */
+.Thorpics {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Two-column layout */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Stack photos in one column on mobile */
+@media (max-width: 600px) {
+    .Thorpics {
+        grid-template-columns: 1fr;
+    }
+
+    #two {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Tablet-specific styling for image */
+@media (min-width: 601px) and (max-width: 1024px) {
+    #one {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+/* Individual photo styling */
+#one,
+#four,
+#five {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Fixed height for a specific image */
+#two {
+    width: 100%;
+    height: 470px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Full-width spanning image */
+#three {
+    grid-column: 1 / -1;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* ======= SOCIAL ICON BAR (FIXED) ======= */
+.social-bar {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background-color: #f4d73e;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.social-bar img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+@media (max-width: 600px) {
+    .social-bar {
+    display: none;
+    }
+}
+/* Larger icons and padding for tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .social-bar {
+        padding: 30px 20px;
+        gap: 30px;
+    }
+
+    .social-bar img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* ======= CONTACT FORM ======= */
+#contact {
+    width: 60%;
+    margin: 40px auto;
+    text-align: center;
+    border: 2px solid #ffd700;
+    border-radius: 10px;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ======= FORM INPUT BOXES ======= */
+.box {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+.box input,
+.box textarea {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* ======= MOBILE FORM STYLES ======= */
+@media (max-width: 600px) {
+    #contact {
+        width: 90%;
+        padding: 20px;
+        margin: 20px auto;
+        border-width: 1px;
+    }
+
+    .box {
+        padding: 20px;
+        margin: 10px auto;
+        max-width: 100%;
+    }
+
+    .box input,
+    .box textarea {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .footer-bar img {
+        width: 20px;
+        height: 20px;
+        margin: 5px;
+    }
+}
+.footer-bar img {
+    width: 30px;
+    height: auto;
+    margin: 5px;
+}
+
+/* ======= SMALLER FOOTER TEXT ON TABLETS ======= */
+@media (max-width: 768px) {
+    footer p {
+        font-size: 12px;
+    }
+}
+
+/* ======= TABLET-SPECIFIC FOOTER BAR ======= */
+@media (min-width: 601px) and (max-width: 1024px) {
+
+    .box input,
+    .box textarea {
+        font-size: 15px;
+    }
+
+    footer p {
+        font-size: 23px;
+    }
+
+    .footer-bar img {
+        width: 30px;
+        height: auto;
+        margin: 5px;
+    }
+}
